@@ -1,0 +1,58 @@
+name: Build & Release Plugin Zip
+
+# Quando rodar: sempre que uma tag começando com 'v' for criada
+# Exemplo: v1.1.0, v1.2.0, v2.0.0
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Faz checkout do código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Define o nome do diretório do plugin
+      - name: Set plugin variables
+        id: vars
+        run: |
+          echo "PLUGIN_SLUG=easy-webp-optimizer" >> $GITHUB_OUTPUT
+          echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      # 3. Cria pasta com o nome do plugin e copia apenas os arquivos relevantes
+      - name: Prepare plugin folder
+        run: |
+          mkdir -p build/${{ steps.vars.outputs.PLUGIN_SLUG }}
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            --exclude='build' \
+            --exclude='CHANGELOG.md' \
+            --exclude='README.md' \
+            --exclude='LICENSE' \
+            --exclude='*.zip' \
+            ./ build/${{ steps.vars.outputs.PLUGIN_SLUG }}/
+
+      # 4. Compacta a pasta em um .zip versionado
+      - name: Create zip archive
+        run: |
+          cd build
+          zip -r ${{ steps.vars.outputs.PLUGIN_SLUG }}.zip ${{ steps.vars.outputs.PLUGIN_SLUG }}
+
+      # 5. Cria a release no GitHub e anexa o .zip
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/${{ steps.vars.outputs.PLUGIN_SLUG }}.zip
+          generate_release_notes: true
+          name: "Release ${{ steps.vars.outputs.TAG_NAME }}"
+          draft: false
+          prerelease: false

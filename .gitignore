@@ -1,0 +1,85 @@
+# ===========================================
+# Easy WebP Optimizer — .gitignore
+# ===========================================
+
+# --- VS Code (SFTP credentials and workspace settings) ---
+.vscode/
+*.code-workspace
+
+# --- SFTP config (NEVER commit credentials!) ---
+sftp.json
+*.ftpconfig
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# --- Windows ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# --- Linux ---
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# --- Logs ---
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Node / NPM (in case you add tooling later) ---
+node_modules/
+package-lock.json
+yarn.lock
+
+# --- Composer (PHP dependencies, in case you add) ---
+vendor/
+composer.lock
+
+# --- Build artifacts ---
+build/
+dist/
+*.zip
+!easy-webp-optimizer-v*.zip
+
+# --- Editor backups ---
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# --- WordPress backup / dump files ---
+*.sql
+*.tar.gz
+wp-config-backup.php
+
+# --- OS / IDE ---
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Test / coverage ---
+coverage/
+.phpunit.result.cache
