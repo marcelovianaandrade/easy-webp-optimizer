@@ -39,6 +39,8 @@ jobs:
             --exclude='README.md' \
             --exclude='LICENSE' \
             --exclude='*.zip' \
+            --exclude='assets' \
+            --exclude='Screenshorts' \
             ./ build/${{ steps.vars.outputs.PLUGIN_SLUG }}/
 
       # 4. Compacta a pasta em um .zip versionado

@@ -31,11 +31,17 @@ A **lightweight WordPress plugin** for bulk converting JPG/PNG images to the mod
 
 ## 📸 Screenshots
 
-> Screenshots coming soon. The plugin currently shows:
-> 1. Environment diagnostic panel
-> 2. Bulk conversion with progress bar and savings counter
-> 3. Delivery toggle with `.htaccess` status indicator
-> 4. Detailed conversion log with per-image stats
+### Environment Diagnostic
+![Plugin header and Environment Diagnostic showing server capabilities](assets/01-diagnostico-ambiente.jpg)
+*Main panel displays a complete environment diagnostic: image engine (GD/Imagick), WebP support, server (Apache/LiteSpeed/Nginx) and max width/quality configuration.*
+
+### Generate WebP files
+![Generate WebP files section with Start optimization button](assets/02-gerar-webp.jpg)
+*Creates a `.webp` file alongside each JPG/PNG in the Media Library, resizing to 1280px width when needed. **Original files are always preserved.***
+
+### Automatic delivery to browsers
+![Automatic delivery section with .htaccess and PHP filter information](assets/03-entrega-automatica.jpg)
+*Delivers `.webp` files automatically to compatible browsers, with fallback to JPG/PNG. Supports two layers: `.htaccess` rewrite rule (fastest) and PHP filter that replaces `<img>` with `<picture>` elements (robust fallback).*
 
 ---
 
