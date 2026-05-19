@@ -8,6 +8,20 @@
   <img src="https://img.shields.io/github/downloads/marcelovianaandrade/easy-webp-optimizer/total.svg" alt="Downloads"/>
 </p>
 
+<p align="center">
+  <a href="https://github.com/marcelovianaandrade/easy-webp-optimizer/releases/latest/download/easy-webp-optimizer.zip">
+    <img src="https://img.shields.io/badge/⬇️_Baixar_última_versão-2271B1?style=for-the-badge&logo=wordpress&logoColor=white" alt="Baixar plugin">
+  </a>
+  &nbsp;
+  <a href="https://github.com/marcelovianaandrade/easy-webp-optimizer/releases">
+    <img src="https://img.shields.io/badge/📦_Ver_releases-555?style=for-the-badge" alt="Ver releases">
+  </a>
+  &nbsp;
+  <a href="https://github.com/marcelovianaandrade/easy-webp-optimizer/stargazers">
+    <img src="https://img.shields.io/badge/⭐_Star-FFC107?style=for-the-badge" alt="Star">
+  </a>
+</p>
+
 A **lightweight WordPress plugin** for bulk converting JPG/PNG images to the modern WebP format, with proportional resizing and automatic delivery to compatible browsers.
 
 **No API key. No paid plans. No usage limits.**
