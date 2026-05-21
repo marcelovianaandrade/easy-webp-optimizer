@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Easy WebP Optimizer
- * Plugin URI:  https://github.com/marceloandrade/easy-webp-optimizer
+ * Plugin URI:  https://github.com/marcelovianaandrade/easy-webp-optimizer
  * Description: Bulk convert JPG/PNG to WebP, resize proportionally, and serve WebP automatically to compatible browsers. No API key, no paid plans.
- * Version:     1.1.0
+ * Version:     1.1.1
  * Author:      Marcelo Andrade
- * Author URI:  https://github.com/marceloandrade
+ * Author URI:  https://github.com/marcelovianaandrade
  * License:     GPL-2.0+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: easy-webp-optimizer
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'EASY_WEBP_MAX_WIDTH', 1280 );
 define( 'EASY_WEBP_QUALITY', 82 );
 define( 'EASY_WEBP_BATCH_SIZE', 5 );
-define( 'EASY_WEBP_VERSION', '1.1.0' );
+define( 'EASY_WEBP_VERSION', '1.1.1' );
 define( 'EASY_WEBP_PLUGIN_FILE', __FILE__ );
 
 class Easy_WebP_Optimizer {
